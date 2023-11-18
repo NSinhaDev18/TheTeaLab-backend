@@ -1,3 +1,4 @@
+require("dotenv").config();
 const Customer = require("../models/customer");
 const bcrypt = require("bcrypt");
 var jwt = require("jsonwebtoken");
@@ -9,7 +10,7 @@ const {
   passwordSchema,
 } = require("../validation/auth");
 
-const jwtSecret = "ghdsjvbiuy43870yoh22#$hoihnAkpvbjhTN)3&_N";
+const jwtSecret = process.env.JWT_TOKEN;
 var salt = bcrypt.genSaltSync(10);
 
 //Signup Handler
